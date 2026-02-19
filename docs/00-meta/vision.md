@@ -4,6 +4,30 @@ Letzte Aktualisierung: 2026-02-19
 
 ---
 
+## Kurzbeschreibung (für den Bekannten)
+
+> **Was wir bauen:**
+>
+> Eine professionelle Website für deine Maschinen - besser als eBay, einfacher zu pflegen.
+>
+> **Wie es funktioniert:**
+> - Du legst einmal alle Maschinentypen an die du handelst (Katalog)
+> - Diese sind immer sichtbar mit "auf Anfrage"
+> - Wenn du eine Maschine fertig repariert hast: Typ auswählen, Preis + Fotos eintragen, fertig
+> - Der Kunde sieht dann: "2 Stück auf Lager" + kann direkt anfragen
+> - Wenn verkauft: Ein Klick → weg. Der Katalog-Eintrag bleibt aber
+>
+> **Dein Aufwand:**
+> - Einmalig: Katalog anlegen (machen wir zusammen vor, mit Beispieldaten)
+> - Danach: Nur noch Lagermaschinen eintragen wenn du welche fertig hast (2-3 Min pro Maschine)
+> - Anfragen kommen per E-Mail, du siehst sie auch im Admin-Bereich
+>
+> **Was du brauchst:**
+> - Internet und einen Browser (Handy, Tablet oder PC)
+> - Das war's
+
+---
+
 ## Geschäftsziel
 
 Professionelle Website für **Karstens Maschinen** - Verkauf von reparierten/generalüberholten Postbearbeitungsmaschinen an Geschäftskunden.
@@ -26,11 +50,11 @@ Professionelle Website für **Karstens Maschinen** - Verkauf von reparierten/gen
 ### Lösung
 
 Eine eigene Website mit:
-1. **Produktkatalog**: Alle Maschinen übersichtlich präsentiert
-2. **Zwei Verfügbarkeitstypen**: "Auf Lager" (sofort) + "Auf Anfrage" (beschaffbar)
+1. **Produktkatalog**: Alle Maschinentypen die gehandelt werden (immer sichtbar)
+2. **Lagerbestand**: Konkrete Maschinen die gerade verfügbar sind
 3. **Anfrage-System**: Kunden können direkt anfragen, bekommen individuelles Angebot
 4. **Ankauf-Formular**: Besucher können eigene Maschinen zum Verkauf anbieten
-5. **Admin-Bereich**: Selbstständige Pflege der Maschinen ohne Programmierkenntnisse
+5. **Admin-Bereich**: Selbstständige Pflege ohne Programmierkenntnisse
 
 ---
 
@@ -45,8 +69,115 @@ Eine eigene Website mit:
 ```
 
 - **Ankauf**: Defekte/alte Maschinen von Unternehmen
-- **Reparatur**: Generalüberholung durch den Bekannten
+- **Reparatur**: Generalüberholung
 - **Verkauf**: An Geschäftskunden (B2B)
+
+---
+
+## Das Katalog + Lager System
+
+### Konzept
+
+**Zwei Arten von Einträgen:**
+
+| Typ | Beschreibung | Beispiel |
+|-----|--------------|----------|
+| **Katalog-Eintrag** | Maschinentyp den er generell handelt | "Pitney Bowes DI950" |
+| **Lager-Maschine** | Konkrete Maschine die gerade da ist | "DI950, Bj. 2019, 2.450€" |
+
+### Wie es zusammenspielt
+
+```
+KATALOG-EINTRAG: Pitney Bowes DI950
+├── Allgemeine Beschreibung (was kann die Maschine)
+├── Typische Specs (Geschwindigkeit, Formate)
+├── Hersteller-/Beispielbild
+├── Status: "Auf Anfrage verfügbar"
+│
+└── LAGER-MASCHINEN (verknüpft):
+    ├── #1: Baujahr 2019, sehr gut, 2.450€, [eigene Fotos]
+    ├── #2: Baujahr 2017, gut, 1.890€, [eigene Fotos]
+    └── (wenn verkauft → verschwindet, Katalog bleibt)
+```
+
+### Was der Kunde sieht
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Pitney Bowes DI950                           │
+│                    Kuvertiermaschine                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  [Bild]  Hochleistungs-Kuvertiermaschine für mittlere bis      │
+│          große Postmengen. Verarbeitet bis zu 3.500 Briefe     │
+│          pro Stunde.                                            │
+│                                                                 │
+│  ════════════════════════════════════════════════════════════  │
+│                                                                 │
+│  🟢 AKTUELL 2 AUF LAGER:                                       │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │ [Foto]  Baujahr 2019 │ Sehr gut │ 2.450 €              │   │
+│  │         Komplett generalüberholt, neue Rollen           │   │
+│  │                                    [ Anfragen ]         │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │ [Foto]  Baujahr 2017 │ Gut │ 1.890 €                   │   │
+│  │         Technisch einwandfrei, optische Gebrauchsspuren │   │
+│  │                                    [ Anfragen ]         │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                 │
+│  ────────────────────────────────────────────────────────────  │
+│  Keine passende dabei? Wir können diese Maschine auch          │
+│  auf Anfrage für Sie besorgen.    [ Allgemeine Anfrage ]       │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Workflow im Admin
+
+**Einmalig: Katalog anlegen**
+```
+1. "Neuer Katalog-Eintrag"
+2. Name: Pitney Bowes DI950
+3. Kategorie: Kuvertiermaschine
+4. Allgemeine Beschreibung
+5. Typische Preisspanne: ab 1.500€
+6. Fertig → ist jetzt "auf Anfrage" sichtbar
+```
+
+**Regelmäßig: Lagermaschine eintragen (wenn eine fertig repariert ist)**
+```
+1. "Neue Lagermaschine"
+2. Basiert auf: [Pitney Bowes DI950 ▼]  ← Dropdown, wählt Katalog-Eintrag
+   → Name, Kategorie, Basis-Beschreibung werden übernommen!
+3. Nur noch eingeben:
+   - Baujahr: 2019
+   - Zustand: Sehr gut
+   - Preis: 2.450€
+   - Besonderheiten: "Neue Rollen, komplett überholt"
+   - Fotos hochladen
+4. Speichern → sofort online, Kunde sieht "1 auf Lager"
+```
+
+**Wenn verkauft:**
+```
+1. Lagermaschine öffnen
+2. Status: "Verkauft"
+3. Speichern → verschwindet aus Anzeige
+   (Katalog-Eintrag "Pitney Bowes DI950" bleibt aber mit "auf Anfrage")
+```
+
+### Vorteile dieses Systems
+
+| Für den Bekannten | Für den Kunden |
+|-------------------|----------------|
+| Katalog nur einmal anlegen | Sieht alle Maschinen die es gibt |
+| Lagermaschine in 2-3 Min eintragen | Sieht sofort was auf Lager ist |
+| Wenig Tipparbeit (erbt vom Katalog) | Kann konkrete Maschine anfragen |
+| Verkauft = 1 Klick | Oder allgemein anfragen |
+| Katalog bleibt immer vollständig | Professioneller Eindruck |
 
 ---
 
@@ -69,7 +200,7 @@ Eine eigene Website mit:
 
 ### Administrator
 - Der Bekannte selbst
-- Muss Maschinen selbst pflegen können (hinzufügen, bearbeiten, löschen)
+- Muss Maschinen selbst pflegen können
 
 ---
 
@@ -79,12 +210,12 @@ Eine eigene Website mit:
 
 **Muss (MVP):**
 - [ ] Startseite mit Firmenvorstellung
-- [ ] Produktkatalog mit allen Maschinen
+- [ ] Produktkatalog (alle Maschinentypen)
+- [ ] Lagerbestand-Anzeige (was gerade da ist)
 - [ ] Filterung nach Kategorie
 - [ ] Suchfunktion
-- [ ] Produktdetailseite (Fotos, Beschreibung, Preis, technische Daten)
-- [ ] Verfügbarkeitsstatus: "Auf Lager" / "Auf Anfrage"
-- [ ] **Anfrage-Button** bei jeder Maschine
+- [ ] Produktdetailseite mit Lagermaschinen
+- [ ] **Anfrage-Button** bei jeder Maschine (Lager + Katalog)
 - [ ] **Allgemeines Kontaktformular**
 - [ ] **Ankauf-Formular** (eigene Maschine anbieten)
 - [ ] Impressum & Datenschutz
@@ -92,96 +223,97 @@ Eine eigene Website mit:
 
 **Nice-to-have (später):**
 - [ ] Merkliste / Favoriten
-- [ ] Ähnliche Produkte anzeigen
+- [ ] "Neu eingetroffen" Badge
 - [ ] FAQ-Bereich
-- [ ] Blog/News (z.B. neue Maschinen eingetroffen)
 
 ### Für Admin (geschützter Bereich)
 
 **Muss (MVP):**
-- [ ] Login (einfach, nur ein Admin-Account)
-- [ ] **Maschinen verwalten**:
-  - Hinzufügen (Name, Beschreibung, Preis, Kategorie, Fotos, Status)
-  - Bearbeiten
-  - Löschen
-  - Status ändern (Auf Lager / Auf Anfrage / Verkauft / Versteckt)
-- [ ] **Kategorien verwalten** (hinzufügen, bearbeiten, löschen)
-- [ ] **Anfragen einsehen** (Produktanfragen + Kontaktanfragen + Ankauf-Anfragen)
+- [ ] Login (einfach, ein Admin-Account)
+- [ ] **Katalog-Einträge verwalten** (Maschinentypen)
+- [ ] **Lagermaschinen verwalten** (konkrete Maschinen)
+- [ ] **Kategorien verwalten**
+- [ ] **Anfragen einsehen** (Produkt + Kontakt + Ankauf)
 - [ ] Anfragen als "bearbeitet" markieren
+- [ ] Fotos hochladen (Drag & Drop)
 
 **Nice-to-have (später):**
-- [ ] Dashboard mit Statistiken (Anfragen pro Woche, beliebteste Maschinen)
-- [ ] Mehrere Fotos pro Maschine mit Sortierung
-- [ ] Maschine duplizieren (für ähnliche Modelle)
-- [ ] Export der Anfragen als CSV
+- [ ] Dashboard mit Statistiken
+- [ ] Lagermaschine duplizieren
+- [ ] E-Mail-Benachrichtigung bei neuer Anfrage
 
 ---
 
-## Datenfelder pro Maschine
+## Datenfelder
 
-**Pflichtfelder:**
-| Feld | Beschreibung |
-|------|--------------|
-| Name/Titel | z.B. "Pitney Bowes DI950" |
-| Kategorie | z.B. Kuvertiermaschine |
-| Beschreibung | Freitext, was kann die Maschine |
-| Preis | In Euro (oder "Auf Anfrage") |
-| Status | Auf Lager / Auf Anfrage / Verkauft |
-| Hauptbild | Mindestens ein Foto |
+### Katalog-Eintrag (Maschinentyp)
 
-**Optionale Felder:**
-| Feld | Beschreibung |
-|------|--------------|
-| Hersteller | z.B. Pitney Bowes, Neopost, Francotyp |
-| Modell | Genaue Modellbezeichnung |
-| Baujahr | Wann hergestellt |
-| Zustand | Sehr gut / Gut / Gebraucht |
-| Technische Daten | Geschwindigkeit, Formate, etc. |
-| Weitere Fotos | Galerie |
+| Feld | Pflicht | Beschreibung |
+|------|---------|--------------|
+| Name | Ja | z.B. "Pitney Bowes DI950" |
+| Kategorie | Ja | z.B. Kuvertiermaschine |
+| Hersteller | Ja | z.B. Pitney Bowes |
+| Beschreibung | Ja | Allgemeine Infos zur Maschine |
+| Bild | Ja | Hersteller-/Beispielbild |
+| Preisspanne | Optional | z.B. "ab 1.500€" |
+| Technische Daten | Optional | Geschwindigkeit, Formate, etc. |
+
+### Lagermaschine (konkret)
+
+| Feld | Pflicht | Beschreibung |
+|------|---------|--------------|
+| Katalog-Eintrag | Ja | Verknüpfung zum Typ |
+| Baujahr | Ja | z.B. 2019 |
+| Zustand | Ja | Sehr gut / Gut / Gebraucht |
+| Preis | Ja | Konkreter Preis in € |
+| Fotos | Ja | Eigene Fotos dieser Maschine |
+| Besonderheiten | Optional | Was ist besonders an dieser |
+| Status | Ja | Auf Lager / Reserviert / Verkauft |
 
 ---
 
 ## Produktkategorien (Vorschlag)
 
-*Basierend auf aufpost.de und gängigen Maschinen:*
+*⚠️ Mit Bekanntem klären*
 
 1. **Kuvertiermaschinen** (Falzen + Kuvertieren)
-   - z.B. Pitney Bowes DI950, Neopost DS-75
-
 2. **Frankiermaschinen** (Porto drucken)
-   - z.B. Pitney Bowes SendPro, Francotyp PostBase
-
 3. **Adressdrucker** (Umschläge bedrucken)
-   - z.B. für Etiketten oder Direktdruck
-
-4. **Falzmaschinen** (nur Falzen, kein Kuvertieren)
-
-5. **Brieföffner** (automatisches Öffnen von Post)
-
+4. **Falzmaschinen** (nur Falzen)
+5. **Brieföffner** (automatisches Öffnen)
 6. **Zubehör & Verbrauchsmaterial**
-   - Tintenpatronen, Siegelflüssigkeit, Umschläge
-
-**⚠️ KLÄREN: Welche Kategorien will der Bekannte wirklich?**
 
 ---
 
-## Beispiel-Maschinen (zum Start)
+## Vorbefüllung mit Beispieldaten
 
-*Diese können wir vorab recherchieren und eintragen, der Bekannte passt dann Preise/Details an:*
+### Strategie
+
+```
+1. Wir recherchieren typische Maschinen (Pitney Bowes, Neopost, etc.)
+2. Wir legen Katalog-Einträge an mit:
+   - Namen
+   - Allgemeinen Beschreibungen
+   - Herstellerbildern (oder Platzhaltern)
+   - Typischen Specs
+3. Der Bekannte:
+   - Schaut sich alles an
+   - Löscht was er nicht handelt
+   - Passt Beschreibungen an
+   - Fügt seine Lagermaschinen hinzu
+```
+
+### Beispiel-Maschinen für Katalog
 
 | Maschine | Kategorie | Hersteller |
 |----------|-----------|------------|
 | Pitney Bowes DI950 | Kuvertiermaschine | Pitney Bowes |
+| Pitney Bowes Relay 1000 | Kuvertiermaschine | Pitney Bowes |
 | Neopost DS-75 | Kuvertiermaschine | Neopost |
 | Neopost DS-200 | Kuvertiermaschine | Neopost |
-| Frama Matrix F32 | Frankiermaschine | Frama |
 | Francotyp PostBase Mini | Frankiermaschine | Francotyp |
+| Frama Matrix F32 | Frankiermaschine | Frama |
 | Pitney Bowes SendPro C | Frankiermaschine | Pitney Bowes |
-
-**Vorteil dieser Strategie:**
-- Website sieht von Anfang an "voll" aus
-- Bekannter muss nur anpassen, nicht von Null anfangen
-- Wir lernen welche Felder wirklich gebraucht werden
 
 ---
 
@@ -189,52 +321,28 @@ Eine eigene Website mit:
 
 **Explizit NICHT im ersten Release:**
 
-- ❌ **Kein Warenkorb / Online-Kauf** - Nur Anfragen, Verkauf persönlich/telefonisch
-- ❌ **Keine Zahlungsabwicklung** - Zahlung auf Rechnung, nicht über Website
-- ❌ **Keine Kundenkonten** - Kunden müssen sich nicht registrieren
-- ❌ **Keine Bewertungen/Reviews** - Zu komplex für MVP
-- ❌ **Kein Newsletter** - Später optional
-- ❌ **Keine mobile App** - Responsive Website reicht
-- ❌ **Keine eBay-Integration** - Manuell parallel pflegen oder eBay aufgeben
-
----
-
-## Technische Umsetzung
-
-### Idee: Beispieldaten vorausfüllen
-
-```
-1. Wir recherchieren typische Maschinen (Pitney Bowes, Neopost, etc.)
-2. Wir füllen Kategorien + Beispiel-Maschinen ein
-3. Der Bekannte loggt sich ein und passt an:
-   - Preise setzen
-   - Beschreibungen anpassen
-   - Status ändern (Auf Lager / Auf Anfrage)
-   - Eigene Fotos hochladen
-   - Maschinen löschen die er nicht will
-   - Neue hinzufügen
-```
-
-**Das ist gut umsetzbar weil:**
-- Admin-Bereich ist sowieso geplant
-- Bearbeiten ist einfacher als neu anlegen
-- Website sieht von Tag 1 professionell aus
-- Bekannter sieht sofort wie es aussehen wird
+- ❌ **Kein Warenkorb / Online-Kauf**
+- ❌ **Keine Zahlungsabwicklung** (Zahlung auf Rechnung)
+- ❌ **Keine Kundenkonten**
+- ❌ **Keine Bewertungen/Reviews**
+- ❌ **Kein Newsletter**
+- ❌ **Keine mobile App**
+- ❌ **Keine eBay-Integration**
 
 ---
 
 ## Erfolgskriterien
 
 ### Für den Bekannten
-- [ ] Kann selbstständig Maschinen hinzufügen/bearbeiten
+- [ ] Kann selbstständig Katalog pflegen
+- [ ] Kann Lagermaschinen in < 3 Min eintragen
 - [ ] Bekommt Anfragen per E-Mail
 - [ ] Website sieht professioneller aus als eBay
-- [ ] Weniger Aufwand als eBay-Listings pflegen
 
 ### Für Kunden
-- [ ] Finden schnell was sie suchen
+- [ ] Sehen alle Maschinentypen (Katalog)
+- [ ] Sehen was auf Lager ist
 - [ ] Können einfach anfragen
-- [ ] Sehen alle verfügbaren + beschaffbaren Maschinen
 
 ### Technisch
 - [ ] Mobile-optimiert
@@ -244,23 +352,17 @@ Eine eigene Website mit:
 
 ---
 
-## Offene Fragen (fürs Gespräch)
+## Offene Fragen
 
-Siehe separate Datei: `docs/04-tasks/backlog/TASK-001-vision-ausarbeiten.md`
+Siehe: `docs/04-tasks/backlog/TASK-001-vision-ausarbeiten.md`
 
 ---
 
 ## Zusammenfassung
 
-**In einem Satz:** Professionelle Website für den Verkauf von reparierten Postbearbeitungsmaschinen mit selbstverwaltetem Admin-Bereich.
+**In einem Satz:** Professionelle Website mit Produktkatalog + Lagerbestand, wo der Bekannte selbst Maschinen pflegen kann.
 
-**Kernfunktionen:**
-1. Produktkatalog mit "Auf Lager" + "Auf Anfrage"
-2. Anfrage-Formular pro Produkt
-3. Ankauf-Formular für Verkäufer
-4. Admin-Bereich zur Selbstverwaltung
-
-**USP (Unique Selling Point):**
-- Generalüberholte Maschinen = günstiger als neu
-- Professionelle Präsentation = Vertrauen
-- Größeres Sortiment = auch Maschinen die beschaffbar sind
+**Das Besondere:**
+- Katalog = alle Maschinentypen (immer sichtbar, "auf Anfrage")
+- Lager = konkrete Maschinen (erscheinen automatisch beim Katalog-Eintrag)
+- Wenig Aufwand: Lagermaschine erbt vom Katalog, nur Preis/Fotos/Zustand eingeben

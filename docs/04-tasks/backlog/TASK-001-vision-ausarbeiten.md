@@ -8,11 +8,24 @@
 
 ---
 
+## Was schon geklärt ist ✅
+
+| Thema | Entscheidung |
+|-------|--------------|
+| Preismodell | Preise anzeigen, Kauf nur auf Anfrage |
+| Verfügbarkeit | Katalog (auf Anfrage) + Lagermaschinen (konkret) |
+| Ankauf | Ja, mit Formular |
+| Kontakt | Pro Produkt + allgemeines Formular |
+| Admin-Bereich | Selbstverwaltung, kann komplexer sein |
+| System | Katalog + Lagerbestand (getrennt aber verknüpft) |
+
+---
+
 ## Fragenliste fürs Gespräch
 
-### 1. PRODUKTE & KATEGORIEN
+### 1. MASCHINENTYPEN (für den Katalog)
 
-**Welche Maschinenarten verkaufst du?**
+**Welche Maschinenarten handelst du?**
 - [ ] Kuvertiermaschinen (Falzen + in Umschlag)
 - [ ] Frankiermaschinen (Porto drucken)
 - [ ] Adressdrucker
@@ -28,175 +41,168 @@
 - [ ] Frama
 - [ ] Andere: _______________
 
-**Wie viele Maschinen hast du typischerweise auf Lager?**
-- [ ] 1-5
-- [ ] 5-15
-- [ ] 15-30
-- [ ] Mehr als 30
-
-**Wie viele "auf Anfrage" Maschinen sollen gezeigt werden?**
-(Maschinen die du besorgen könntest)
-- [ ] Nur was auf Lager ist
-- [ ] 10-20 weitere
-- [ ] Großes Sortiment (50+)
-- [ ] So viele wie möglich
+**Wie viele verschiedene Maschinentypen handelst du ca.?**
+(Für den Katalog, nicht Lagerbestand)
+- [ ] 5-10 verschiedene Typen
+- [ ] 10-20 verschiedene Typen
+- [ ] Mehr als 20
+- [ ] Weiß nicht genau
 
 ---
 
-### 2. PREISE & VERKAUF
+### 2. LAGERBESTAND
 
-**Wie sollen Preise angezeigt werden?**
-- [ ] Fester Preis anzeigen
-- [ ] Preisspanne (z.B. "ab 500€")
-- [ ] "Preis auf Anfrage" bei allen
-- [ ] Mix (manche fest, manche auf Anfrage)
+**Wie viele Maschinen hast du typischerweise fertig auf Lager?**
+- [ ] 1-5
+- [ ] 5-10
+- [ ] Mehr als 10
 
-**Sind die Preise verhandelbar?**
+**Wie oft kommt eine neue Maschine dazu?**
+- [ ] Mehrmals pro Woche
+- [ ] Einmal pro Woche
+- [ ] Alle paar Wochen
+- [ ] Unregelmäßig
+
+---
+
+### 3. PREISE
+
+**Wie willst du Preise im Katalog anzeigen?**
+(Für Maschinentypen wo gerade keine auf Lager ist)
+- [ ] "Preis auf Anfrage"
+- [ ] Preisspanne: "ab X €" oder "X - Y €"
+- [ ] Gar keinen Preis
+
+**Sind deine Preise verhandelbar?**
 - [ ] Ja, immer
 - [ ] Nein, Festpreise
 - [ ] Kommt drauf an
 
-**Wie läuft der Verkauf ab?**
-- [ ] Kunde fragt an → Angebot per Mail → Kauf per Überweisung
-- [ ] Telefonisch besprechen
-- [ ] Abholung vor Ort möglich?
-- [ ] Versand möglich? Wer zahlt Versand?
-
 ---
 
-### 3. ANKAUF VON MASCHINEN
+### 4. ANKAUF
 
-**Kaufst du aktiv defekte Maschinen an?**
-- [ ] Ja, ist wichtiger Teil des Geschäfts
-- [ ] Ja, aber eher selten
-- [ ] Nein, nur Verkauf
+**Wie wichtig ist der Ankauf für dich?**
+- [ ] Sehr wichtig, mache ich oft
+- [ ] Ab und zu
+- [ ] Eher selten
 
-**Was braucht das Ankauf-Formular?**
+**Was willst du vom Verkäufer wissen?**
 - [ ] Maschinentyp/Modell
 - [ ] Baujahr
-- [ ] Zustand (funktioniert / defekt / unbekannt)
-- [ ] Fotos hochladen
+- [ ] Zustand (funktioniert/defekt)
+- [ ] Fotos
 - [ ] Kontaktdaten
-- [ ] Preisvorstellung
+- [ ] Preisvorstellung des Verkäufers
 - [ ] Sonstiges: _______________
 
 ---
 
-### 4. WEBSITE ALLGEMEIN
+### 5. WEBSITE & FIRMA
 
 **Firmenname auf der Website:**
 - [ ] Karstens Maschinen
 - [ ] Anderer Name: _______________
 
-**Gibt es schon ein Logo?**
+**Hast du ein Logo?**
 - [ ] Ja
 - [ ] Nein, muss erstellt werden
-- [ ] Einfach Text reicht erstmal
+- [ ] Text reicht erstmal
 
 **Hast du schon eine Domain?**
 - [ ] Ja: _______________
-- [ ] Nein, muss noch registriert werden
+- [ ] Nein
 
 **Impressum-Daten:**
-- Name: _______________
+- Name/Firma: _______________
 - Adresse: _______________
 - Telefon: _______________
 - E-Mail: _______________
 
 ---
 
-### 5. ADMIN-BEREICH
-
-**Wie willst du Anfragen erhalten?**
-- [ ] Per E-Mail
-- [ ] Im Admin-Bereich anzeigen
-- [ ] Beides
-
-**Wer soll Zugang zum Admin-Bereich haben?**
-- [ ] Nur du selbst
-- [ ] Auch andere (z.B. Mitarbeiter)
-
-**Welche Daten brauchst du pro Maschine?**
-Pflicht:
-- [ ] Name/Titel
-- [ ] Kategorie
-- [ ] Beschreibung
-- [ ] Preis
-- [ ] Status (Auf Lager / Auf Anfrage / Verkauft)
-- [ ] Mindestens 1 Foto
-
-Optional:
-- [ ] Hersteller
-- [ ] Modell
-- [ ] Baujahr
-- [ ] Zustand (Sehr gut / Gut / Gebraucht)
-- [ ] Technische Daten (Geschwindigkeit, Formate)
-- [ ] Mehrere Fotos
-- [ ] Sonstiges: _______________
-
----
-
 ### 6. EBAY
 
 **Was passiert mit eBay?**
-- [ ] Komplett aufgeben → nur noch Website
+- [ ] Komplett aufgeben wenn Website läuft
 - [ ] Parallel weiterlaufen lassen
 - [ ] Erstmal beides, später entscheiden
 
 ---
 
-### 7. DESIGN & AUSSEHEN
+### 7. DESIGN
 
-**Farbschema?**
-- [ ] Blau (seriös, professionell)
-- [ ] Grün (nachhaltig, gebraucht)
-- [ ] Rot/Orange (auffällig)
+**Farbwünsche?**
+- [ ] Blau (seriös)
+- [ ] Grün (nachhaltig/gebraucht)
 - [ ] Grau/Schwarz (neutral)
 - [ ] Egal, du entscheidest
 - [ ] Bestimmte Farben: _______________
 
-**Vorbilder? Websites die dir gefallen?**
-- [ ] aufpost.de
-- [ ] Andere: _______________
+---
+
+### 8. PRIORITÄT
+
+**Was ist dir am wichtigsten?**
+(1 = sehr wichtig, 3 = weniger wichtig)
+
+- Professioneller Auftritt: ___
+- Einfache Bedienung für dich: ___
+- Anfragen bekommen: ___
+- Ankauf-Formular: ___
+- Schnell fertig werden: ___
 
 ---
 
-### 8. ZEITPLAN & PRIORITÄTEN
+## Konzept erklären
 
-**Wann soll die Website online sein?**
-- [ ] So schnell wie möglich
-- [ ] In 1-2 Monaten
-- [ ] Kein Zeitdruck
+**Dem Bekannten das Katalog + Lager System erklären:**
 
-**Was ist am wichtigsten?**
-(1 = sehr wichtig, 3 = weniger wichtig)
-- [ ] Produkte anzeigen: ___
-- [ ] Anfrage-Funktion: ___
-- [ ] Ankauf-Formular: ___
-- [ ] Schönes Design: ___
-- [ ] Admin-Bereich: ___
+> "Du legst einmal alle Maschinentypen an die du handelst - das ist der Katalog.
+> Die sind dann immer sichtbar mit 'auf Anfrage'.
+>
+> Wenn du eine Maschine fertig repariert hast, wählst du einfach den Typ aus,
+> gibst Preis, Baujahr, Zustand ein und lädst Fotos hoch.
+> Der Kunde sieht dann automatisch '1 auf Lager' bei diesem Typ.
+>
+> Wenn die verkauft ist: Ein Klick auf 'Verkauft' und sie verschwindet.
+> Der Katalog-Eintrag bleibt aber.
+>
+> Du musst nie die gleichen Infos doppelt eingeben -
+> die Lagermaschine erbt alles vom Katalog-Eintrag."
+
+**Fragen dazu:**
+- Klingt das gut?
+- Ist das verständlich?
+- Würdest du es anders machen wollen?
 
 ---
 
 ## Notizen aus dem Gespräch
 
-*(Hier nach dem Gespräch eintragen)*
-
 ```
 Datum: _______________
 
-Wichtigste Erkenntnisse:
+Kategorien/Maschinentypen:
 -
 -
 -
 
-Entscheidungen:
+Hersteller die er handelt:
 -
 -
 -
 
-Offene Punkte:
+Design-Wünsche:
 -
+
+Impressum-Daten:
+- Name:
+- Adresse:
+- Tel:
+- Mail:
+
+Sonstiges:
 -
 -
 ```
@@ -205,6 +211,7 @@ Offene Punkte:
 
 ## Nach dem Gespräch
 
-- [ ] Notizen hier eintragen
-- [ ] vision.md aktualisieren
-- [ ] Task als erledigt markieren
+- [ ] Notizen eintragen
+- [ ] vision.md finalisieren
+- [ ] Kategorien festlegen
+- [ ] Task abschließen
